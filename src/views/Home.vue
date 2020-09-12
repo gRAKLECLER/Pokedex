@@ -1,18 +1,34 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>The Pokemons</h1>
+    <BaseCard/>
+    <button @click="refresh">new Pokemons</button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import BaseCard from '@/components/BaseCard.vue';
 
 export default {
-  name: 'Home',
   components: {
-    HelloWorld,
+    BaseCard,
+  },
+  methods: {
+    refresh() {
+      window.location.reload(true);
+    },
   },
 };
 </script>
+
+<style>
+
+button {
+  padding: 1rem;
+  border: 0;
+  background-color: rgb(36, 90, 90);
+  color: white;
+  border-radius: 5px;
+}
+
+</style>
